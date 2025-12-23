@@ -14,7 +14,14 @@
         <a href="index.html">
             <img src="images/logo.png" alt="SkippityBuysPins Logo" class="logo-img">
         </a>
-        <ul>
+        
+        <!-- Hamburger Button (Mobile Only) -->
+        <button class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Links (Now grouped in a UL with a class) -->
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="sell.html">Sell Your Pins</a></li>
             <li><a href="shows.html">Live Shows</a></li>
@@ -50,7 +57,6 @@
             </ul>
             
             <!-- BUTTON LINK -->
-            <!-- REPLACE THE # with your actual Whatnot Profile URL -->
             <a href="https://www.whatnot.com/user/skippity_doo_da" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;">
                 <i class="fa-solid fa-gavel"></i> Follow on Whatnot
             </a>
@@ -58,3 +64,22 @@
             <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
                 <em>Click "Follow" and the Bell Icon 🔔 to get notified when we go live!</em>
             </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SkippityBuysPins.com</p>
+    </footer>
+
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

@@ -5,10 +5,17 @@
     --primary-pink: #ec407a;
     --deep-purple: #8e24aa;
     --gold-accent: #ffd700;
-    --light-bg: #fff0f5; /* Lavender blush */
+    --light-bg: #fff0f5;
     --text-dark: #2c3e50;
-    --text-light: #ffffff;
     --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- THE IMAGE SAFETY RULE --- */
+/* This stops images from breaking the mobile layout */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
 }
 
 body {
@@ -18,12 +25,13 @@ body {
     background-color: var(--light-bg);
     color: var(--text-dark);
     line-height: 1.6;
+    overflow-x: hidden; /* Prevents side-scrolling */
 }
 
 /* --- NAVIGATION --- */
 nav {
     background: white;
-    padding: 0.5rem 5%; /* Reduced top/bottom padding slightly since logo is tall */
+    padding: 0.5rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,39 +41,41 @@ nav {
     z-index: 1000;
 }
 
-/* New Logo Styles */
 .logo-img {
-    height: 70px; /* Sets the height, width scales automatically */
+    height: 60px; /* Slightly smaller for safety */
     width: auto;
-    display: block;
     transition: transform 0.2s;
 }
 
-.logo-img:hover {
-    transform: scale(1.05); /* Subtle pop effect when hovering */
-}
+.nav-links { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; transition: color 0.3s; }
+.nav-links a:hover { color: var(--primary-pink); }
 
-nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; align-items: center; }
-nav a { text-decoration: none; color: var(--text-dark); font-weight: 600; transition: color 0.3s; }
-nav a:hover { color: var(--primary-pink); }
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--deep-purple);
+    cursor: pointer;
+}
 
 /* --- HERO SECTIONS --- */
 .hero {
     background: linear-gradient(135deg, var(--deep-purple), var(--primary-pink));
     color: white;
-    padding: 4rem 5%;
+    padding: 3rem 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 30px; /* Reduced for mobile safety */
+    border-bottom-right-radius: 30px;
 }
 
 .hero-text { flex: 1; }
-.hero h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.2; }
-.hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
-
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
 .hero-img {
     flex: 1;
     max-width: 500px;
@@ -74,104 +84,48 @@ nav a:hover { color: var(--primary-pink); }
     border: 4px solid white;
 }
 
-/* --- BUTTONS --- */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.2s;
-}
-
-.btn-primary {
-    background: var(--gold-accent);
-    color: var(--deep-purple);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-}
-
-.btn-primary:hover { transform: translateY(-3px); background: #ffe033; }
-
-/* --- SECTIONS --- */
-.container { max-width: 1100px; margin: 0 auto; padding: 4rem 20px; }
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    text-align: center;
-}
-
-.card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    border-top: 5px solid var(--primary-pink);
-}
-
+/* --- BUTTONS & SECTIONS --- */
+.btn { display: inline-block; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+.btn-primary { background: var(--gold-accent); color: var(--deep-purple); box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4); }
+.container { max-width: 1100px; margin: 0 auto; padding: 3rem 20px; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; text-align: center; }
+.card { background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow); border-top: 5px solid var(--primary-pink); }
 .about-split { display: flex; align-items: center; gap: 3rem; }
-.profile-pic { width: 300px; border-radius: 50%; border: 5px solid white; box-shadow: var(--shadow); }
+.profile-pic { width: 100%; max-width: 300px; border-radius: 50%; border: 5px solid white; box-shadow: var(--shadow); margin: 0 auto; }
 
-/* --- FOOTER --- */
-footer {
-    background: var(--text-dark);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-}
+/* --- CONTACT ACTIONS --- */
+.contact-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 2rem 5%; background: white; text-align: center; }
+.btn-icon { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px; border-radius: 12px; font-weight: 700; text-decoration: none; color: white; }
+.btn-email { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.btn-phone { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.btn-messenger { background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); }
+.btn-instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+footer { background: var(--text-dark); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
 
-
-/* --- CONTACT ACTION BAR --- */
-.contact-actions {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    padding: 3rem 5%;
-    background: white;
-    text-align: center;
-    border-top: 1px solid #fce4ec;
-}
-
-.btn-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px 25px;
-    border-radius: 12px;
-    font-weight: 700;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.2s, box-shadow 0.2s;
-    font-size: 1.1rem;
-}
-
-.btn-icon i { font-size: 1.3rem; }
-
-/* Specific Colors for Brands */
-.btn-email { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3); }
-.btn-phone { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3); }
-.btn-messenger { background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3); }
-.btn-instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); box-shadow: 0 4px 15px rgba(253, 29, 29, 0.3); }
-
-.btn-icon:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.1);
-}
-
-/* Mobile Stack Fix */
-@media (max-width: 600px) {
-    .contact-actions { grid-template-columns: 1fr; padding: 2rem; }
-}
-
-
-/* --- MOBILE --- */
+/* --- MOBILE SPECIFIC STYLES --- */
 @media (max-width: 768px) {
-    .logo-im
-    g {
-        height: 45px; /* Smaller logo on phones */
+    /* Show Hamburger */
+    .hamburger { display: block; }
+
+    /* Hide Menu Links by Default */
+    .nav-links {
+        display: none; /* Hidden */
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Drop right below nav */
+        left: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
     }
-    nav { padding: 1rem; }
+
+    /* Show Menu When Active class is added via JS */
+    .nav-links.active { display: flex; }
+
+    .hero, .about-split { flex-direction: column; text-align: center; }
+    .hero h1 { font-size: 2rem; }
+    .about-split { flex-direction: column-reverse; } /* Puts text above image on mobile usually, or below */
+    .contact-actions { grid-template-columns: 1fr; }
 }
