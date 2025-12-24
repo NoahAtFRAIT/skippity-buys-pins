@@ -37,7 +37,7 @@
             <p>Ready to part with your collection? Join hundreds of satisfied sellers who trust Skippity for a safe, fast, and magical selling experience.</p>
             <a href="sell.html" class="btn btn-primary">Get A Free Quote</a>
         </div>
-        <img src="images/hero.png" alt="Disney Pin Collection on Table" class="hero-img">
+        <img src="images/hero-1.png" alt="Disney Pin Collection" class="hero-img" id="hero-rotator">
     </header>
 
     <!-- Main Content -->
@@ -69,5 +69,39 @@
             navLinks.classList.toggle('active');
         });
     </script>
+    <script>
+    // --- HERO IMAGE ROTATOR ---
+    const images = [
+        'images/hero-1.png',
+        'images/hero-2.png',
+        'images/hero-3.png'
+    ];
+    
+    let currentIndex = 0;
+    const heroImg = document.getElementById('hero-rotator');
+
+    // Preload images so they don't lag/flash white
+    images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+    });
+
+    function rotateImage() {
+        // 1. Start Fade Out
+        heroImg.style.opacity = '0';
+
+        // 2. Wait 0.5s for fade to finish, then swap image
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % images.length; // Loop to next image
+            heroImg.src = images[currentIndex];
+            
+            // 3. Fade In
+            heroImg.style.opacity = '1';
+        }, 300); // This 500 matches the CSS transition time
+    }
+
+    // Change image every 5 seconds (5000 milliseconds)
+    setInterval(rotateImage, 4500);
+</script>
 </body>
 </html>
