@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We Buy Disney Pins | SkippityBuysPins.com</title>
-    <meta name="description" content="Sell your Disney pin collection for cash. Rated 5 stars by the community. Fast quotes and fair payments.">
+    <title>We Buy & Sell Disney Pins | SkippityBuysPins.com</title>
+    <meta name="description" content="A trusted Disney Adult sharing the magic. We buy pin collections and host live shopping events. 5-Star rated, authentic pins, and a caring community.">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -17,12 +17,10 @@
             <img src="images/logo.png" alt="SkippityBuysPins Logo" class="logo-img">
         </a>
         
-        <!-- Hamburger Button (Mobile Only) -->
         <button class="hamburger" id="hamburger">
             <i class="fa-solid fa-bars"></i>
         </button>
 
-        <!-- Links (Now grouped in a UL with a class) -->
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="sell.html">Sell Your Pins</a></li>
@@ -30,78 +28,102 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (With Image Rotator) -->
     <header class="hero">
         <div class="hero-text">
-            <h1>Turn Your Pin Collection Into Cash</h1>
-            <p>Ready to part with your collection? Join hundreds of satisfied sellers who trust Skippity for a safe, fast, and magical selling experience.</p>
-            <a href="sell.html" class="btn btn-primary">Get A Free Quote</a>
+            <h1>Sharing the Passion of Disney</h1>
+            <p>Welcome to SkippityBuysPins. Whether you are looking to sell a massive collection or hunt for your next grail, we are here to share the magic with the world.</p>
+            <div style="margin-top: 20px;">
+                <a href="sell.html" class="btn btn-primary">Sell Your Pins</a>
+                <a href="shows.html" class="btn" style="border: 2px solid white; color: white; margin-left: 10px;">Shop Live</a>
+            </div>
         </div>
+        <!-- ID 'hero-rotator' is required for the script below -->
         <img src="images/hero-1.png" alt="Disney Pin Collection" class="hero-img" id="hero-rotator">
     </header>
 
     <!-- Main Content -->
     <section class="container">
-        <div class="features-grid">
-            <div class="card">
-                <h3>💰 Fast Payment</h3>
-                <p>No waiting around. Once we agree on a price and receive the pins, we pay immediately via PayPal or Venmo.</p>
-            </div>
-            <div class="card">
-                <h3>🔍 Fair Appraisals</h3>
-                <p>We know the market. We pay fair prices for LEs, APs, and vintage pins. We don't lowball our community.</p>
-            </div>
-            <div class="card">
-                <h3>⭐⭐⭐⭐⭐<br>5-Star Rated</h3>
-                <p>Trusted by the Disney community. We pride ourselves on 5-star service, clear communication, and honesty.</p>
+        
+        <!-- INTRODUCTION (SEO + Bio) -->
+        <div class="features-grid" style="grid-template-columns: 1fr; text-align: left; margin-bottom: 40px;">
+            <div class="card" style="border-top: 5px solid var(--deep-purple);">
+                <h2 style="text-align: center; margin-bottom: 20px;">Welcome to the Community</h2>
+                <p>Hello! I am a <strong>Disney Adult</strong> sharing my passion for all that is Disney with the rest of the world. Whether it is chatting in the community, hosting live auctions, or personal shopping in the parks, it is always a pleasure to connect with fellow fans.</p>
+                <p>At <strong>SkippityBuysPins.com</strong>, we bridge the gap between collectors who are ready to sell and new fans looking for authentic treasures. We pride ourselves on being a safe haven in the pin trading world—no fakes, no drama, just magic.</p>
             </div>
         </div>
+
+        <!-- CORE VALUES (Trust Signals) -->
+        <div class="features-grid">
+            <div class="card">
+                <h3><i class="fa-solid fa-hand-holding-heart" style="color: var(--primary-pink);"></i> Our Philosophy</h3>
+                <p>Your well-being is important to me. While I love sharing pins, it is never my place to tell one how to spend their money. I encourage everyone to bid responsibly and never go beyond their means. We want this hobby to be a joy, not a burden.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-star" style="color: var(--gold-accent);"></i> 5-Star Service</h3>
+                <p>We strive for perfection, but we are human. While we have a strict "No Refunds or Cancellations" policy to keep auctions fair, <strong>I always try to make it right when I can</strong>. My reputation is built on honesty, authenticity, and care. 🫶❤️🫶</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-magnifying-glass" style="color: var(--deep-purple);"></i> Authenticity Guaranteed</h3>
+                <p>The Disney pin world can be tricky. When you sell to us, you get a fair expert appraisal. When you buy from us, you get 100% guaranteed authentic pins. We verify every single item that passes through our hands.</p>
+            </div>
+        </div>
+
+        <!-- SEO TEXT BLOCK -->
+        <div style="margin-top: 60px;">
+            <h2>Your Trusted Disney Pin Source</h2>
+            <p><strong>Buying Collections:</strong> Are you looking to sell your Disney pins? We make it easy. We purchase Limited Editions, WDI (Walt Disney Imagineering), DSSH (Disney Studio Store Hollywood), and bulk hidden mickey lots. We provide immediate payment and cover shipping, making us the easiest way to liquidate your collection.</p>
+            
+            <p><strong>Live Shopping:</strong> Join us on Whatnot and Instagram for our famous live sales. From $1 starts to high-end grail auctions, our shows are about more than just buying things—they are about hanging out with people who love the mouse as much as you do.</p>
+        </div>
+
     </section>
 
     <footer>
         <p>&copy; 2025 SkippityBuysPins.com | Built with Magic ✨</p>
     </footer>
+
+    <!-- SCRIPTS -->
     <script>
+        // --- 1. MOBILE MENU SCRIPT ---
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
 
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
+
+        // --- 2. HERO IMAGE ROTATOR SCRIPT ---
+        const images = [
+            'images/hero-1.png',
+            'images/hero-2.png',
+            'images/hero-3.png'
+        ];
+        
+        let currentIndex = 0;
+        const heroImg = document.getElementById('hero-rotator');
+
+        // Preload images
+        images.forEach((src) => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        function rotateImage() {
+            // Fade Out
+            heroImg.style.opacity = '0';
+
+            // Wait, Swap, Fade In
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                heroImg.src = images[currentIndex];
+                heroImg.style.opacity = '1';
+            }, 500); // Matches CSS transition time
+        }
+
+        // Rotate every 3 seconds
+        setInterval(rotateImage, 3000);
     </script>
-    <script>
-    // --- HERO IMAGE ROTATOR ---
-    const images = [
-        'images/hero-1.png',
-        'images/hero-2.png',
-        'images/hero-3.png'
-    ];
-    
-    let currentIndex = 0;
-    const heroImg = document.getElementById('hero-rotator');
-
-    // Preload images so they don't lag/flash white
-    images.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-    });
-
-    function rotateImage() {
-        // 1. Start Fade Out
-        heroImg.style.opacity = '0';
-
-        // 2. Wait 0.5s for fade to finish, then swap image
-        setTimeout(() => {
-            currentIndex = (currentIndex + 1) % images.length; // Loop to next image
-            heroImg.src = images[currentIndex];
-            
-            // 3. Fade In
-            heroImg.style.opacity = '1';
-        }, 300); // This 500 matches the CSS transition time
-    }
-
-    // Change image every 5 seconds (5000 milliseconds)
-    setInterval(rotateImage, 4500);
-</script>
 </body>
 </html>
