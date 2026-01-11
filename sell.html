@@ -101,7 +101,8 @@
                 <a href="tel:+18134340810" class="modal-link call-link">
                     <i class="fa-solid fa-phone"></i> Call Now
                 </a>
-                <a href="sms:+18134340810" class="modal-link text-link">
+                <!-- UPDATED TEXT LINK WITH PRE-FILLED MESSAGE -->
+                <a href="sms:+18134340810&body=Hi%20Skippity!%20I%20have%20some%20Disney%20pins%20I%20would%20like%20to%20sell.%20[Attached%20are%20some%20photos]" class="modal-link text-link">
                     <i class="fa-solid fa-comment-sms"></i> Send Text
                 </a>
             </div>
@@ -122,17 +123,14 @@
         const btn = document.getElementById("contactBtn");
         const span = document.getElementById("closeModal");
 
-        // Open modal
         btn.onclick = function() {
             modal.style.display = "flex";
         }
 
-        // Close modal via X
         span.onclick = function() {
             modal.style.display = "none";
         }
 
-        // Close modal by clicking background
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
