@@ -34,59 +34,42 @@
         <img src="images/webuy.png" alt="Suitcase full of disney pins" class="hero-img">
     </header>
 
-    <!-- MAIN SEO CONTENT SECTION -->
     <section class="container">
-        
         <h2>How to Sell Your Disney Pins</h2>
-        <p>Deciding to part with a collection is a big decision. Whether you are clearing out space, funding a new vacation, or just moving on from the hobby, <strong>SkippityBuysPins.com</strong> is the safest place to sell. Unlike pawn shops or general resellers, we are actual Disney collectors who understand the true value of your items.</p>
+        <p>Deciding to part with a collection is a big decision. Whether you are clearing out space, funding a new vacation, or just moving on from the hobby, <strong>SkippityBuysPins.com</strong> is the safest place to sell.</p>
 
-        <div class="features-grid" style="text-align: left; margin-top: 40px; margin-bottom: 40px;">
+        <div class="features-grid" style="margin-top: 40px; margin-bottom: 40px;">
             <div class="card">
                 <h3><i class="fa-solid fa-gem" style="color: var(--primary-pink);"></i> What We Buy</h3>
-                <ul style="margin-top: 15px; line-height: 1.8;">
+                <ul style="margin-top: 15px; line-height: 1.8; text-align: left;">
                     <li><strong>Bulk Lots:</strong> We buy "pounds" of pins for bulk pricing.</li>
                     <li><strong>Limited Editions (LE):</strong> LE 100, 250, 500, etc.</li>
                     <li><strong>WDI / Imagineering:</strong> Profile pins and Mickeys of Glendale exclusives.</li>
                     <li><strong>DSSH / Soda Fountain:</strong> Ice cream cones, marquees, and character blocks.</li>
-                    <li><strong>Hidden Mickeys:</strong> Complete sets of authentic Cast Lanyard pins.</li>
                 </ul>
             </div>
 
             <div class="card">
                 <h3><i class="fa-solid fa-ban" style="color: var(--deep-purple);"></i> What We Don't Buy</h3>
-                <p style="margin-top: 15px;">We are proud to maintain a <strong>5-Star Reputation</strong> in the community. To keep our inventory clean, we do <strong>not</strong> knowingly purchase:</p>
-                <ul style="margin-top: 10px; line-height: 1.8;">
+                <p style="margin-top: 15px; text-align: left;">To keep our inventory clean, we do <strong>not</strong> knowingly purchase:</p>
+                <ul style="margin-top: 10px; line-height: 1.8; text-align: left;">
                     <li>"Scrappers" (Unauthorized factory seconds).</li>
                     <li>Fantasy Pins (Unauthorized fan art pins).</li>
                     <li>Damaged items (Broken posts, missing enamel).</li>
-                    <li>Buttons or plastic souvenirs (We only buy metal enamel pins).</li>
                 </ul>
             </div>
         </div>
 
         <h2>Frequently Asked Questions</h2>
-        <p><em>Common questions from sellers like you.</em></p>
-
         <div style="background: white; padding: 30px; border-radius: 15px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
             <h3 style="color: var(--deep-purple);">How do I get a quote?</h3>
-            <p>It's simple! Take a few clear photos of your pins. You don't need to photograph them individually—just lay them out on a table or snap a photo of your pin books. Email or text them to us using the buttons below.</p>
+            <p>It's simple! Take a few clear photos of your pins. You don't need to photograph them individually—just lay them out on a table. Email or text them to us using the buttons below.</p>
             
             <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
 
             <h3 style="color: var(--deep-purple);">How do you pay?</h3>
-            <p>We pay immediately upon agreement and verification. We use <strong>PayPal Goods & Services</strong> (to protect both parties) or Venmo for trusted local sellers. We cover the shipping costs!</p>
-
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
-            <h3 style="color: var(--deep-purple);">Do you buy "Fantasy" pins?</h3>
-            <p>Generally, no. We specialize in official Disney trading pins (stamped with the official Disney pin trading logo on the back). However, if you have a mixed lot, we can help you sort them out.</p>
-
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
-            <h3 style="color: var(--deep-purple);">My pins are from 2005. Are they worth more?</h3>
-            <p>Age is a factor, but rarity is king! Some pins from 2005 are common "rack pins" worth a few dollars, while others are rare Limited Editions worth hundreds. Our team has the expertise to identify the "Grails" in your collection so you don't sell them for cheap.</p>
+            <p>We pay immediately upon agreement and verification via <strong>PayPal Goods & Services</strong>. We cover the shipping costs!</p>
         </div>
-
     </section>
 
     <!-- CONTACT ACTIONS -->
@@ -94,9 +77,11 @@
         <a href="mailto:skippity@skippitybuyspins.com" class="btn-icon btn-email">
             <i class="fa-solid fa-envelope"></i> Email Photos
         </a>
-        <a href="tel:+18134340810" class="btn-icon btn-phone">
-            <i class="fa-solid fa-phone"></i> Call / Text
-        </a>
+        
+        <button id="contactBtn" class="btn-icon btn-phone">
+            <i class="fa-solid fa-mobile-screen-button"></i> Call or Text
+        </button>
+
         <a href="https://instagram.com/skippity_doo_daday" class="btn-icon btn-instagram">
             <i class="fa-brands fa-instagram"></i> DM on Insta
         </a>
@@ -106,13 +91,53 @@
         <p>&copy; 2026 SkippityBuysPins.com | Built with Magic ✨</p>
     </footer>
 
+    <!-- MODAL POPUP -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3>Contact Skippity</h3>
+            <p>How would you like to reach out?</p>
+            <div class="modal-options">
+                <a href="tel:+18134340810" class="modal-link call-link">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
+                <a href="sms:+18134340810" class="modal-link text-link">
+                    <i class="fa-solid fa-comment-sms"></i> Send Text
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // MOBILE HAMBURGER MENU
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
 
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
+
+        // MODAL LOGIC
+        const modal = document.getElementById("contactModal");
+        const btn = document.getElementById("contactBtn");
+        const span = document.getElementById("closeModal");
+
+        // Open modal
+        btn.onclick = function() {
+            modal.style.display = "flex";
+        }
+
+        // Close modal via X
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close modal by clicking background
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
